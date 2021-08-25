@@ -7,22 +7,22 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import List from "./components/List.vue";
+import { ref } from "vue"
+import List from "./components/List.vue"
 
 export default {
   components: { List },
   setup() {
-    const todos = ref(JSON.parse(localStorage.getItem("todoList")) ?? []);
-    const newTodoText = ref();
+    const todos = ref(JSON.parse(localStorage.getItem("todoList")) ?? [])
+    const newTodoText = ref()
 
     const addTodo = () => {
-      todos.value.push(newTodoText.value);
-      localStorage.setItem("todoList", JSON.stringify(todos.value));
-      newTodoText.value = "";
-    };
+      todos.value.push(newTodoText.value)
+      localStorage.setItem("todoList", JSON.stringify(todos.value))
+      newTodoText.value = ""
+    }
 
-    return { todos, addTodo, newTodoText };
+    return { todos, addTodo, newTodoText }
   },
-};
+}
 </script>
